@@ -15,7 +15,7 @@
 
 
 
-<title>Website&#39;s scope | Leo Yu</title>
+<title>EC3 2024 | Leo Yu</title>
 
 
 
@@ -129,50 +129,105 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Website&#39;s scope</h1>
+            <h1 class="post-title">EC3 2024</h1>
             
                 <div class="post-meta">
                     
 
                     
                         <span class="post-time">
-                        Date: <a href="#">January 20, 2024&nbsp;&nbsp;12:11:50</a>
+                        Date: <a href="#">September 26, 2024&nbsp;&nbsp;15:40:49</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Conference/">Conference</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>The pupose of this website is to provide a summary of the research projects that I have worked on from my PhD and research assistant activity; it will mainly be targeted for<br>academic recruiter</p>
-<p>It will contain these categories</p>
-<p>Research<br>    - GPT 4 Turbo + Langchain (methodology framework; output generated GPT)<br>    - Kerb and channel inspection using Gopro (experiment set-up)<br>    - Yolo on pavement crack (performance video)</p>
-<pre><code>Data-driven IRI (R-squared data plot)
-crowdsourcing (videos, images, performance improvement)
-App evaluations (App interfaces, experimenct video, performance plot)
-vibration test videos (videos of the vibration test)
-Review study (graphical abstract, paper amount barchart)
-Roughness profile estiamtion from vehicle body acceleration - part 1 (FCL method)
-Roughness profile estiamtion from vehicle body acceleration - part 2 (LSTM)
-Roughness profile estiamtion from vehicle body acceleration - part 2 (Conventional method)
-
-
-bridge inspection RA  (me installing the pot)
-field campaint RA (me sampling the soil moisture, and photos of all of us, image of the sun rise and sun set at Yanco)
-
-Roughness index estimation using traffic and climate data FYP projects (use the findings and images made by them)
-</code></pre>
-<p>Teaching<br>    Course “AI in infrastructure health monitoring” (materials on github)<br>    Tutor (CIV***) Zoom screenshot of the us on the screen<br>    Tutor (CIV***)<br>    FYP 2023 (images taken with FYP studnets on their poster presentation)<br>    FYP 2024</p>
-<p>Engineering industry<br>    Civil engineering (iamges of the rendering of the designed projects)<br>    Structural engineering (images of rendering of the designed projects)<br>    Map of the jobs worked on shown on Google map<br>    Summary of Oneill group working experience (Image of O’Neill group having lunch together)<br>    Summary of bce design working experience (Check Apple cloud)</p>
-<p>Volunteering<br>    MElbourne GStep (facebook link of my interview; image of me taken with the team)<br>    ACES (image of the group photo taken in front of alexandar hall)</p>
-<p>Workshops<br>    Sparchub showcse event (blog post, with images taken by us)<br>    NTRO pavement inspection training</p>
-<p>Publications<br>    Journal<br>    conference<br>    Thesis</p>
-<p>Resume</p>
+            <h3 id="Presenting-at-the-European-Council-on-Computing-in-Construction-2024"><a href="#Presenting-at-the-European-Council-on-Computing-in-Construction-2024" class="headerlink" title="Presenting at the European Council on Computing in Construction 2024"></a>Presenting at the European Council on Computing in Construction 2024</h3><p>On 15&#x2F;07&#x2F;2024, I had the opportunity to attend the <strong>European Council on Computing in Construction 2024</strong> conference, where I presented our team’s latest research: <strong>“Estimate Road Roughness Using Smartphone Response Data - A Semi-Supervised Learning Approach”</strong>. This work was co-authored by <strong>Ye Sang</strong>, <strong>Dr. Yihai Fang</strong>, <strong>Dr. Viet Vo</strong>, and <strong>Richard Wix</strong>.</p>
+<h4 id="Tackling-the-Challenge-of-Road-Roughness-Estimation"><a href="#Tackling-the-Challenge-of-Road-Roughness-Estimation" class="headerlink" title="Tackling the Challenge of Road Roughness Estimation"></a>Tackling the Challenge of Road Roughness Estimation</h4><p>Developing a reliable, data-driven <strong>International Roughness Index (IRI)</strong> estimation model is often costly due to the extensive labelled data required, typically collected through conventional survey vehicles. However, the widespread availability of unlabelled data from road users opened up new possibilities for us.</p>
+<p>We explored the potential of <strong>semi-supervised learning (SSL)</strong> algorithms, which enabled us to utilize both labelled and unlabelled data effectively. Our study showed that by applying SSL, we improved the IRI estimation model and achieved a lower <strong>Root Mean Squared Error (RMSE)</strong> compared to the baseline model, all while using the same amount of labelled data.</p>
+<h4 id="Learn-More"><a href="#Learn-More" class="headerlink" title="Learn More"></a>Learn More</h4><ul>
+<li><strong>Watch the presentation</strong>: <a target="_blank" rel="noopener" href="https://lnkd.in/g_fw2MZi">Here</a></li>
+<li><strong>Read the paper</strong>: <a target="_blank" rel="noopener" href="https://lnkd.in/gtsabPYb">Here</a></li>
+</ul>
 
         </div>
 
@@ -190,6 +245,12 @@ Roughness index estimation using traffic and climate data FYP projects (use the 
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/Conference/"># Conference</a>
+                    
+                        <a href="/tags/Academia/"># Academia</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -200,10 +261,8 @@ Roughness index estimation using traffic and climate data FYP projects (use the 
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/01/21/YOlO-V5%20and%20V8%20on%20pavement%20defect%20detection/">Pavement defect detection wusing YOLO</a>
             
-            
-            <a class="next" rel="next" href="/2022/01/30/hello-world/">Hello World</a>
+            <a class="next" rel="next" href="/2024/09/27/Literature-review/">Literature review</a>
             
         </section>
 

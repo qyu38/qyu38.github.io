@@ -129,6 +129,71 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
@@ -140,7 +205,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">September 26, 2024&nbsp;&nbsp;15:40:49</a>
+                        Date: <a href="#">July 15, 2024&nbsp;&nbsp;15:40:49</a>
                         </span>
                     
                     
@@ -156,7 +221,14 @@
         </header>
 
         <div class="post-content">
-            
+            <h3 id="Presenting-at-the-European-Council-on-Computing-in-Construction-2024"><a href="#Presenting-at-the-European-Council-on-Computing-in-Construction-2024" class="headerlink" title="Presenting at the European Council on Computing in Construction 2024"></a>Presenting at the European Council on Computing in Construction 2024</h3><p>Two weeks ago, I had the opportunity to attend the <strong>European Council on Computing in Construction 2024</strong> conference, where I presented our team’s latest research: <strong>“Estimate Road Roughness Using Smartphone Response Data - A Semi-Supervised Learning Approach”</strong>. This work was co-authored by <strong>Ye Sang</strong>, <strong>Dr. Yihai Fang</strong>, <strong>Dr. Viet Vo</strong>, and <strong>Richard Wix</strong>.</p>
+<h4 id="Tackling-the-Challenge-of-Road-Roughness-Estimation"><a href="#Tackling-the-Challenge-of-Road-Roughness-Estimation" class="headerlink" title="Tackling the Challenge of Road Roughness Estimation"></a>Tackling the Challenge of Road Roughness Estimation</h4><p>Developing a reliable, data-driven <strong>International Roughness Index (IRI)</strong> estimation model is often costly due to the extensive labelled data required, typically collected through conventional survey vehicles. However, the widespread availability of unlabelled data from road users opened up new possibilities for us.</p>
+<p>We explored the potential of <strong>semi-supervised learning (SSL)</strong> algorithms, which enabled us to utilize both labelled and unlabelled data effectively. Our study showed that by applying SSL, we improved the IRI estimation model and achieved a lower <strong>Root Mean Squared Error (RMSE)</strong> compared to the baseline model, all while using the same amount of labelled data.</p>
+<h4 id="Learn-More"><a href="#Learn-More" class="headerlink" title="Learn More"></a>Learn More</h4><ul>
+<li><strong>Watch the presentation</strong>: <a target="_blank" rel="noopener" href="https://lnkd.in/g_fw2MZi">Here</a></li>
+<li><strong>Read the paper</strong>: <a target="_blank" rel="noopener" href="https://lnkd.in/gtsabPYb">Here</a></li>
+</ul>
+
         </div>
 
         
@@ -189,10 +261,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/09/27/Literature-review/">Literature review</a>
+                <a class="prev" rel="prev" href="/2024/09/27/Pavement%20Performance%20&%20Defect%20Workshop/">Pavement Performance & Defect Workshop</a>
             
             
-            <a class="next" rel="next" href="/2024/01/21/YOlO-V5%20and%20V8%20on%20pavement%20defect%20detection/">Pavement defect detection wusing YOLO</a>
+            <a class="next" rel="next" href="/2024/01/21/Automatic%20inspection%20report%20generation%20using%20langchain/">Automatic inspection report generation using langchain</a>
             
         </section>
 
