@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <meta name="subtitle" content="Engineering | AI">
+
+
+    <meta name="description" content="A student from Moanash Clayton">
+
+
+
+<title>Visiting Study at University of Cambridge | Leo Yu</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Leo&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/publication">Publication</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Leo&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/publication">Publication</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Visiting Study at University of Cambridge</h1>
+            
+                <div class="post-meta">
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">September 3, 2024&nbsp;&nbsp;15:26:21</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/PhD/">PhD</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="Visiting-Study-at-the-University-of-Cambridge"><a href="#Visiting-Study-at-the-University-of-Cambridge" class="headerlink" title="Visiting Study at the University of Cambridge"></a>Visiting Study at the University of Cambridge</h3><p>I am excited to share my recent experience during my visiting study at the <strong>University of Cambridge</strong>. This prestigious opportunity allowed me to engage with leading researchers, delve into advanced topics in <strong>pavement roughness estimation</strong>, and collaborate with some of the most innovative minds in the field of civil engineering.</p>
+<h4 id="Research-and-Collaboration"><a href="#Research-and-Collaboration" class="headerlink" title="Research and Collaboration"></a>Research and Collaboration</h4><p>During my time at Cambridge, I was able to work closely with experts in the field, expanding my research on <strong>smartphone-based pavement roughness assessment</strong>. Some of the key takeaways from my visiting study included deepening my understanding of <strong>sustainable infrastructure</strong> and emerging technologies in <strong>road performance evaluation</strong>. I had the chance to present my ongoing research and receive valuable feedback from faculty members and fellow researchers, which will undoubtedly enhance my future work.</p>
+<h4 id="Here-are-some-highlights-from-my-time-at-Cambridge"><a href="#Here-are-some-highlights-from-my-time-at-Cambridge" class="headerlink" title="Here are some highlights from my time at Cambridge:"></a>Here are some highlights from my time at Cambridge:</h4><p><img src="/img/cambridge/cam_BBQ.jpg" alt="BBQ with friends at Cambridge"><br><img src="/img/cambridge/cam_showcase.jpg" alt="Attending showcase event at the Cambridge event"><br><img src="/img/cambridge/choir.jpg" alt="Enjoying the choir performance"><br><img src="/img/cambridge/desk.jpg" alt="Desk setup during my stay"></p>
+<p><img src="/img/cambridge/cam_chn_gathering.jpg" alt="Another great moment with friends"></p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="/img/cambridge/friends.jpg" alt="BBQ with friends at Cambridge"></th>
+<th align="center"><img src="/img/cambridge/friends_2.jpg" alt="Showcasing research at the Cambridge event"></th>
+</tr>
+</thead>
+</table>
+<p><img src="/img/cambridge/newton.jpg" alt="Newton statue at the University"></p>
+<p><img src="/img/cambridge/king_chapel.jpg" alt="Newton statue at the University"></p>
+<h4 id="Looking-Ahead"><a href="#Looking-Ahead" class="headerlink" title="Looking Ahead"></a>Looking Ahead</h4><p>I am incredibly grateful for the opportunity to have studied at the University of Cambridge, and I would like to thank everyone who supported me during this journey, particularly my supervisors and the team at Cambridge. I look forward to applying the insights gained during my stay to my current research and continuing to foster collaboration between our institutions.</p>
+<p>Stay tuned for updates on my research as I integrate new ideas and approaches learned during my time at Cambridge!</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Visiting-Study/"># Visiting Study</a>
+                    
+                        <a href="/tags/Cambridge/"># Cambridge</a>
+                    
+                        <a href="/tags/Research/"># Research</a>
+                    
+                        <a href="/tags/Academia/"># Academia</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/09/27/Literature-review/">Literature review</a>
+            
+            
+            <a class="next" rel="next" href="/2024/09/04/EU_trip_2024/">Europe trip</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>©  | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

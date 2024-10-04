@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <meta name="subtitle" content="Engineering | AI">
+
+
+    <meta name="description" content="A student from Moanash Clayton">
+
+
+
+<title>My Work at BCE Design | Leo Yu</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Leo&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/publication">Publication</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Leo&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/publication">Publication</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">My Work at BCE Design</h1>
+            
+                <div class="post-meta">
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">December 3, 2019&nbsp;&nbsp;22:10:21</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Industry/">Industry</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="My-Experience"><a href="#My-Experience" class="headerlink" title="My Experience"></a>My Experience</h3><p>Reflecting back on my very first job as a professional engineer, I have tremendous gratitude to Mr. Daniel Herbert, who gave me the opportunity to start my career as a <strong>Grad Engineer</strong>.</p>
+<p>At BCE Design, I started as a structural engineer and drafter, working on projects ranging from single dwellings, townhouses, to house extensions. My responsibilities included completing the structural and drainage design, ensuring all designs complied with relevant codes and standards. I also liaised with the council engineering department to develop appropriate stormwater solutions, making sure efficient drainage systems were designed as per their requirements.</p>
+<p>My role also involved performing structural analysis on steel and timber structures and one-way spanning slabs, utilising software such as <strong>SpaceGASS</strong>, <strong>Toolkit</strong>, and <strong>RAPT</strong>. Also, I helped the team develop Excel VBA scripts to automate the design procedures of structural beams. In addition to design work, I draughted drawings using <strong>AutoCAD</strong>.</p>
+<p>We were a small team of five engineers. Sometimes, the work could be very intense and stressful, and I just felt like I needed to work on so many different things, including design, draughting, phone calling, meeting clients, and sometimes even administration. The most challenging was the first six months, when it was not only just the amount of learning I needed to do to get the work completed but also adjusting my mindset. I used to have this mindset of being a student who expected someone to tell me what to do. However, after I started working, I realised that I needed to take the initiative to do things to help my team. The self-driven and self-learning mindset was trained during that time. Moreover, my command of English was also drastically improved using my time at BCE; at Uni, I was only exposed to discussing schoolwork-related topics. However, in the industry, the discussion could be related to everything. My colleagues were quite talkative, and they were always happy to share what they did on the weekends, which really broadened my knowledge as an international student.</p>
+<p>Below are some photos highlighting my moments:</p>
+<h4 id="Inspecting-projects-on-sites"><a href="#Inspecting-projects-on-sites" class="headerlink" title="Inspecting projects on sites:"></a>Inspecting projects on sites:</h4><table>
+<thead>
+<tr>
+<th align="center"><img src="/img/bce/bolt_missing.jpg"></th>
+<th align="center"><img src="/img/bce/measure_roof.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Detecting defects in the as-built</td>
+<td align="center">Measuring structural beam</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="/img/bce/basement_2.jpg"></th>
+<th align="center"><img src="/img/bce/basement.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Inspecting the basement walls</td>
+<td align="center">Leaking basement shortcrete wall</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="/img/bce/detention2.jpg"></th>
+<th align="center"><img src="/img/bce/pit.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Inspecting detention system</td>
+<td align="center">Measuring pit depth</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="/img/bce/wall_cracks.jpg"></th>
+<th align="center"><img src="/img/bce/roof_truss.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Cracked wall on a dwelling</td>
+<td align="center">Roof truss of a project</td>
+</tr>
+</tbody></table>
+<h4 id="Other-moments"><a href="#Other-moments" class="headerlink" title="Other moments:"></a>Other moments:</h4><table>
+<thead>
+<tr>
+<th align="center"><img src="/img/bce/food.jpg"></th>
+<th align="center"><img src="/img/bce/food2.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Burgers with Farris and Danial after a meeting</td>
+<td align="center">Monday morning routine, coffee at CIBI collingwood</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="/img/bce/desk.jpg"></th>
+<th align="center"><img src="/img/bce/discussion.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">My messy desk</td>
+<td align="center">Daniel showing us how to do things properly</td>
+</tr>
+</tbody></table>
+<p>My experience at BCE Design was a foundational in my career. I am grateful for the support and mentorship I received. Thank you Daniel, Jenn, Farris, Emma and Brad! </p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/BCE-Design/"># BCE Design</a>
+                    
+                        <a href="/tags/structural-engineering/"># structural engineering</a>
+                    
+                        <a href="/tags/civil-engineering/"># civil engineering</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/02/03/Oneill_Work_Experience_Post/">My Work at O'Neill Group</a>
+            
+            
+            <a class="next" rel="next" href="/2019/09/21/Melbourne_GSTEP/">Melbourne GSTEP</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>©  | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
