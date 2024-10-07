@@ -221,11 +221,25 @@
         </header>
 
         <div class="post-content">
-            <h3 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h3><p>As the industry is transforming towards ML-based asset management leveraging computer vision and machine learning algorithms, I trained a YOLO model to<br>pickup defects from a road pavement. </p>
-<p>The database RDD <a target="_blank" rel="noopener" href="https://github.com/sekilab/RoadDamageDetector?tab=readme-ov-file">https://github.com/sekilab/RoadDamageDetector?tab=readme-ov-file</a> was used</p>
-<h3 id="Result-on-tested-video"><a href="#Result-on-tested-video" class="headerlink" title="Result on tested video"></a>Result on tested video</h3><p><a target="_blank" rel="noopener" href="https://studio.youtube.com/video/zrqh-q_HL14/edit">https://studio.youtube.com/video/zrqh-q_HL14/edit</a></p>
-<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><p>I compared the performance of Yolo-V5 and Yolo-V8. The Yolo-V5s and V8s were selected</p>
-<h3 id="Findings"><a href="#Findings" class="headerlink" title="Findings"></a>Findings</h3><p>Yolo-V5 picks up more false positivies than V8<br>Howeer, the differencs between the two models are minor, and both could serve the purposes in for practical application, </p>
+            <h4 id="This-work-is-currently-under-peer-review"><a href="#This-work-is-currently-under-peer-review" class="headerlink" title="This work is currently under peer review"></a>This work is currently under peer review</h4><p>Smartphones are increasingly used for monitoring road roughness conditions. However, the smartphone-based roughness index estimation system (sRIE) is vulnerable to variations in vehicle type, driving speed, and mounting configuration. Among these factors, mounting has been underexplored, despite its significant influence on the smartphone-collected vehicle response data. This study aims to quantify the effects of four typical mountings on smartphone-collected response data and develop a method to correct their signals to accurately reflect the vehicle-body response. An empirical-based correction function was obtained from a laboratory vibration test and validated using real-world vehicle response data. This study found that the mountings amplify the signals in a 6 - 18 Hz frequency band, depending on their arm length and rigidity, while attenuating the amplitudes of vibrations above 30 Hz. The proposed method reduces the differences caused by different mountings through amplitude correction in frequency bands. This study provides insights into mounting’s effect on sRIE and contributes to crowdsourcing-based pavement roughness monitoring.</p>
+<p>As shown in the schematic plot below, in the first step, the smartphone-mounting configurations were isolated and tested using a laboratory vibration table. Sinusoidal vibrations were applied to the smartphone mounting system, and the response data at input and output locations was collected by the accelerometer. Then, the response data is transformed into the frequency domain, and the amplitude value of both the input and output is used to plot the frequency response spectrum, and an empirical-based correction function is obtained. This step learns the mounting’s amplification or attenuation pattern across the frequency spectrum. This correction function adjusts the mounted smartphone-collected signals so that they reflect the vehicle body response more accurately. Last, the correction functions were validated in a real-world roughness data collection context. This step ensures that the proposed correction method is effective in real-world applications</p>
+<p><img src="/img/mount/framework.png"></p>
+<p align="center">
+  <strong>Research framework</strong>
+</p>
+
+
+<p align="center">
+  <iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/D1ukQBEzPdI" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen></iframe>
+</p>
+<p align="center">
+  <strong>Mounting vibration test</strong>
+</p>
 
         </div>
 
@@ -244,9 +258,19 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Pavement-defect/"># Pavement defect</a>
+                        <a href="/tags/Pavement-roughness/"># Pavement roughness</a>
                     
                         <a href="/tags/Mounting/"># Mounting</a>
+                    
+                        <a href="/tags/IRI/"># IRI</a>
+                    
+                        <a href="/tags/smartphone/"># smartphone</a>
+                    
+                        <a href="/tags/vibration-test/"># vibration test</a>
+                    
+                        <a href="/tags/crowdsourcing/"># crowdsourcing</a>
+                    
+                        <a href="/tags/pavement-condition-assessment/"># pavement condition assessment</a>
                     
                         
                 </span>
@@ -262,7 +286,7 @@
                 <a class="prev" rel="prev" href="/2024/08/05/Tutoring%20CIV5899/">Tutoring CIV5899</a>
             
             
-            <a class="next" rel="next" href="/2024/07/27/EC3_2024/">EC3 2024</a>
+            <a class="next" rel="next" href="/2024/07/27/EG-ICE_2023/">EG-ICE 2023</a>
             
         </section>
 

@@ -221,11 +221,61 @@
         </header>
 
         <div class="post-content">
-            <h3 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h3><p>As the industry is transforming towards ML-based asset management leveraging computer vision and machine learning algorithms, I trained a YOLO model to<br>pickup defects from a road pavement. </p>
-<p>The database RDD <a target="_blank" rel="noopener" href="https://github.com/sekilab/RoadDamageDetector?tab=readme-ov-file">https://github.com/sekilab/RoadDamageDetector?tab=readme-ov-file</a> was used</p>
-<h3 id="Result-on-tested-video"><a href="#Result-on-tested-video" class="headerlink" title="Result on tested video"></a>Result on tested video</h3><p><a target="_blank" rel="noopener" href="https://studio.youtube.com/video/zrqh-q_HL14/edit">https://studio.youtube.com/video/zrqh-q_HL14/edit</a></p>
-<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><p>I compared the performance of Yolo-V5 and Yolo-V8. The Yolo-V5s and V8s were selected</p>
-<h3 id="Findings"><a href="#Findings" class="headerlink" title="Findings"></a>Findings</h3><p>Yolo-V5 picks up more false positivies than V8<br>Howeer, the differencs between the two models are minor, and both could serve the purposes in for practical application, </p>
+            <p>For details, please refer to the <a target="_blank" rel="noopener" href="https://doi.org/10.1080/10298436.2023.2183402">paper</a></p>
+<h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Roughness is an important indicator of road deterioration and has a significant impact on road serviceability. Conventional instruments for roughness measurement, such as laser profilers, are expensive and require a complex set-up, which limits the surveying frequency and coverage. As an alternative, embedded sensors in smartphones mounted in vehicles have been leveraged to measure roughness indirectly, and multiple smartphone-based roughness index estimation (sRIE) systems have become available recently. However, there lacks a framework to evaluate the performance of sRIE systems in a systematic and repeatable manner. This research proposed an evaluation framework to assess the performance of sRIE systems in practical settings. The framework consists of statistical measures that evaluate the consistency and accuracy of sRIE systems under various mountings, vehicle types, and survey speeds. Three popular sRIE systems were assessed using the framework to validate its validity and practicality. By standardising the performance metrics, this framework allows for performance benchmarking between sRIE systems and conventional instruments. </p>
+<p>A schematic illustration of the framework is shown below. The practical setting includes surveying speed, vehicle type, and mounting configuration. </p>
+<p><img src="/img/evaluation/framework.png"></p>
+<p align="center">
+  <strong>Figure Schematic illustration of the evaluation framework</strong>
+</p>
+
+<hr>
+<p>Two vehicle models employed in the experiments are a Ford Ranger (Denoted as U for ute) and a Volkswagen Golf (Denoted as H for hatchback), as shown in below:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="/img/evaluation/ute.jpg"></th>
+<th align="center"><img src="/img/evaluation/hatch.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Ute</td>
+<td align="center">Hatch</td>
+</tr>
+</tbody></table>
+<p>All three sRIE systems were mounted on “iottie one touch Gen 5”, which is fixed to the vehicle body using a rigorous suction connection. The in-cabin smartphone set-up is shown in Fig. 3</p>
+<p><img src="/img/evaluation/setup.png"></p>
+<p align="center">
+  <strong>Figure 2 Schematic illustration of the evaluation framework</strong>
+</p>
+
+
+<p>The inertial profiler contains laser sensors and accelerometers. The distance to the road surface is measured by the laser sensor, while the movement of the vehicle body is obtained from processing the acceleration data. While the profilers usually have high repeatability (measurement consistency), three repetitive runs were conducted to obtain robust ground truth data.  </p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="/img/evaluation/arrb_car.jpg"></th>
+<th align="center"><img src="/img/evaluation/profiler.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Survey vehicle</td>
+<td align="center">Profiler under the bumper</td>
+</tr>
+</tbody></table>
+<hr>
+<p>App 3 shows the best sIRI - rIRI correlation performance:<br><img src="/img/evaluation/plots.png"></p>
+<p align="center">
+  <strong>Figure sIRI vs sIRImean measurement plot and regression line (App3)</strong>
+</p>
+
+
+<h3 id="Findings"><a href="#Findings" class="headerlink" title="Findings"></a>Findings</h3><p>In summary, the results of the analyses conducted with the three Apps suggested that:</p>
+<ul>
+<li>The smartphone systems do not provide measurements on gravel pavement as consistent and accurate as on asphalt pavement. Under excessive vibration incurred by rough pavement, stiff suspension, or both, the Apps’ consistency and accuracy performance decline.  </li>
+<li>The repeatability performance of two of the three tested Apps depends on survey speed, vehicle type, and mounting variations, and they tend to overestimate the roughness index in general.</li>
+<li>One system provides consistent measurements regardless of vehicle and mounting location variations.</li>
+</ul>
 
         </div>
 
@@ -244,11 +294,13 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Pavement-defect/"># Pavement defect</a>
-                    
                         <a href="/tags/Industry-collaboration/"># Industry collaboration</a>
                     
-                        <a href="/tags/Training/"># Training</a>
+                        <a href="/tags/Pavement-roughness/"># Pavement roughness</a>
+                    
+                        <a href="/tags/Evaluation-framework/"># Evaluation framework</a>
+                    
+                        <a href="/tags/Roughness-index-estimation-smartphone/"># Roughness index estimation. smartphone</a>
                     
                         
                 </span>
@@ -261,7 +313,7 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/01/21/YOlO-V5%20and%20V8%20on%20pavement%20defect%20detection/">Pavement defect detection wusing YOLO</a>
+                <a class="prev" rel="prev" href="/2024/01/21/Automatic%20inspection%20report%20generation%20using%20langchain/">Automatic inspection report generation using langchain</a>
             
             
             <a class="next" rel="next" href="/2023/12/11/profile_estimation/">Vehicle response-based roughness profile estimation</a>

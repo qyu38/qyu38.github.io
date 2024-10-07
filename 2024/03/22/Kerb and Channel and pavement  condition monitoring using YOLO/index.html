@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <meta name="subtitle" content="Engineering | AI">
+
+
+    <meta name="description" content="A student from Moanash Clayton">
+
+
+
+<title>Kerb and Channel and pavement  condition monitoring using YOLO | Leo Yu</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Leo&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Leo&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Kerb and Channel and pavement  condition monitoring using YOLO</h1>
+            
+                <div class="post-meta">
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">March 22, 2024&nbsp;&nbsp;11:20:21</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Research/">Research</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>By developing CV-based models and automated reporting systems, the project aims to improve the accuracy and efficiency of infrastructure inspections, including pavements, kerbs, channels, and sewage pipes. The expected outcome is a proof-of-concept solution that incorporates state-of-the-art techniques, helping Beca remain competitive in innovative infrastructure management solutions.</p>
+<p>Beca aims to automate asset management workflows, including roading defects, and underground sewage pipeline defect detection. Such procedures were conventionally conducted by humans, which could be rather labour-intensive and costly. Beca’s internal AI scope aims to explore the possibilities of incorporating AI-powered workflows to complement the existing workflow pipelines. Key deliverables include:</p>
+<ul>
+<li>Prototype for a pavement defect detection model</li>
+<li>Kerb and channel defect detection for Auckland Transport</li>
+<li>Pipevision defect detection for Dunedin City Council</li>
+</ul>
+<p align="center">
+  <iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/KAadt2gRcF4" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen></iframe>
+</p>
+<p align="center">
+  <strong>Detecting pavement defects using YOLO </strong>
+</p>
+
+<p align="center">
+  <iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/2TnauahIjeM" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen></iframe>
+</p>
+<p align="center">
+  <strong>Kerb and channel defect detection using YOLO </strong>
+</p>
+
+<p align="center">
+  <iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/ERUkdAeBzhg" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen></iframe>
+</p>
+<p align="center">
+  <strong>Pipe defect detection using YOLO </strong>
+</p>
+
+
+<h3 id="Research-Method"><a href="#Research-Method" class="headerlink" title="Research Method"></a>Research Method</h3><p>The research flowchart is presented as follows. First, a literature review was conducted to identify the state-of-the-art techniques that should be employed. The research method also includes data collection and model development. The following sub-sections will provide details on each stage.</p>
+<h4 id="Literature-review"><a href="#Literature-review" class="headerlink" title="Literature review"></a>Literature review</h4><p>The literature review outlines innovative solutions within asset condition monitoring and defect detection, examining their integration within our competitor platforms. It highlights the strategic importance of incorporating these functionalities into Beca’s BEYON offering for upcoming Asset Management contracts. To stay competitive, feasibility and adoption considerations are crucial. The current Asset Management space, along with ongoing ML and LLM initiatives for defect detection are described. A comparative analysis of competitors&#x2F;partners (Bentley, Conelabs) is provided. The literature review also reviewed incorporating 3D model defect labelling&#x2F;viewing and dashboard functionality into Beyon based on competitor features. Moreover, it covered the advantages and limitations of the state-of-the-art potential competitors in terms of data collection instrumentation requirements and service provided. </p>
+<h4 id="Data-collection"><a href="#Data-collection" class="headerlink" title="Data collection"></a>Data collection</h4><p>The data used in the research include both Beca’s data repository and online open-sourced resources. The research aims to develop a CV-based model or three asset inspection jobs, on pavement, K&amp;C and sewage pipe are trained on different data sets, which are from different sources. The data was collected from open-source repositories that are shared by other researchers who addressed the same problems. In addition, the data also comes from Beca’s existing repositories. </p>
+<h4 id="Model-development"><a href="#Model-development" class="headerlink" title="Model development"></a>Model development</h4><p>The model development contains three stages, namely “Defect Detection and Classification”, “Segmentation and Measurement”, and “Reasoning and Reporting Automation”, which are explained in the following sub-sections. </p>
+<h5 id="Defect-detection-and-classification"><a href="#Defect-detection-and-classification" class="headerlink" title="Defect detection and classification"></a>Defect detection and classification</h5><p>This module aims to determine and classify the defect from the photogrammetry data. Computer vision (CV) based models were trained for these purposes. The module involves “training dataset collection and labelling” and “computer vision model training”.<br>The labelling process was completed in Label Studio and Roboflow. Label Studio is a local software package while Roboflow is an online platform for training data labelling and augmentation, as shown in Figure 1. Both tools are used in this research to generate labelled samples. Besides manual labelling, self-labelling was also adopted. Grounding-Dino was deployed to automatically generate labelling using text-prompt, as shown in Figure 2 and Figure 3.</p>
+<p><img src="/img/beca/roboflow.png"></p>
+<p align="center">
+  <strong>Figure 1 Roboflow labelling interface</strong>
+</p>
+
+<p><img src="/img/beca/prompt.png"></p>
+<p align="center">
+  <strong>Figure 2 Prompt text for Grounding-dino</strong>
+</p>
+
+<p><img src="/img/beca/dino.png"></p>
+<p align="center">
+  <strong>Figure 3 Outputs example generated by the Grounding-dino</strong>
+</p>
+
+
+<h5 id="Computer-vision-model-training"><a href="#Computer-vision-model-training" class="headerlink" title="Computer vision model training"></a>Computer vision model training</h5><p>The CV model used in this research is a state-of-the-art You Only Look Once (YOLO) model. It supports real-time object detection and is known for its speed and accuracy in detecting objects in images of various sizes. Different Yolo models were trained for Pavement, K&amp;C, and Pipevision and the GPU of the Beca computer NZ4400 was deployed for training.</p>
+<h5 id="Segmentation-and-measurement"><a href="#Segmentation-and-measurement" class="headerlink" title="Segmentation and measurement"></a>Segmentation and measurement</h5><p>After the defects are detected, segmentation and measurement is a key step in quantifying the defect size, especially for pavement and bridge surface defects. The SOTA semantic segmentation method UNet was adopted. UNet is an open-source pre-trained crack detection model and is fine-tuned in our projects with our datasets. After segmentation is completed, the length and width of the cracks are measured using an open-source algorithm, the output of which is shown in Figure 4.</p>
+<p><img src="/img/beca/crack_measure.png"></p>
+<p align="center">
+  <strong>Figure 4 Crack size measurement</strong>
+</p>
+
+
+
+<h5 id="Reporting-automation"><a href="#Reporting-automation" class="headerlink" title="Reporting automation"></a>Reporting automation</h5><p>Reporting generation is a key step in the final stage of the pipeline. It aims to generate inspection reports from the defects that are picked up by the YOLO model. Hence, a LLM should be developed. In our approach, YOLO defects the defects and then the YOLO outputs are sent to the GPT-4 Vision, which utilises a visual transformer to understand images, and then translate this information into a word description. By combining the two, defects in kerb and channels are first detected using yolo, and then GPT-4 vision is applied on images with defects to generate descriptions of the defect and even find out causes of such defects from the image, as shown in Figure 5.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="/img/beca/yolo_output.png"></th>
+<th align="center"><img src="/img/beca/GPT4_output.png"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Yolo V5: Outputs frames containing defects</td>
+<td align="center">GPT-4 Vision: Text-based description of defects</td>
+</tr>
+</tbody></table>
+<p align="center">
+  <strong>Figure 5 YOLO and GPT-4 vision outputs</strong>
+</p>
+
+
+<h3 id="Research-Results-and-Outcomes"><a href="#Research-Results-and-Outcomes" class="headerlink" title="Research Results and Outcomes"></a>Research Results and Outcomes</h3><p>The research results and outcomes are presented for the modules “Defect Detection and Classification”, “Segmentation and Measurement” and “Reasoning and Reporting Automation”. </p>
+<h4 id="Defect-Detection-and-Classification"><a href="#Defect-Detection-and-Classification" class="headerlink" title="Defect Detection and Classification"></a>Defect Detection and Classification</h4><p>The performance of the YOLO model trained for pavement defect detection is shown in the below table. The precision of the trained model achieved approximately 70%, while the precision of the sewage pipe defect detector achieved 55%.  Meanwhile, the performance of the kerb &amp; channel defect detector is inferior to that of the other two. The improvements that can be made in future are discussed in the “Future Research” section</p>
+<p><img src="/img/beca/pavement_perform.png"></p>
+<p align="center">
+  <strong>Figure 6 Model performance of pavement defect detector</strong>
+</p>
+
+
+<p><img src="/img/beca/pipe_perform.png"></p>
+<p align="center">
+  <strong>Figure 7 Model performance of sewage pipe defect detector</strong>
+</p>
+
+<p><img src="/img/beca/kc_perform.png"></p>
+<p align="center">
+  <strong>Figure 8 Model performance of kerb & Channel defect detector</strong>
+</p>
+
+
+<h4 id="Segmentation-and-measurement-1"><a href="#Segmentation-and-measurement-1" class="headerlink" title="Segmentation and measurement"></a>Segmentation and measurement</h4><p>The performance of the segmentation and measurement algorithm was validated with human measurements. The size measurement for a single crack is estimated by knowing the image dimensions and is achieved by counting pixels contained in a crack to obtain its length and width. The results are shown in Table 2 and Figure 9.</p>
+<div style="text-align: center;">
+  <table border="1" style="margin: 0 auto;">
+    <caption><i>Table 2 Performance of crack measurement</i></caption>
+    <tr>
+      <th>Ground-truth</th>
+      <th>Model’s results</th>
+    </tr>
+    <tr>
+      <td>Crack length = 212mm</td>
+      <td>Crack length = 197mm</td>
+    </tr>
+    <tr>
+      <td>Crack width = 1mm</td>
+      <td>Crack width = 7mm</td>
+    </tr>
+  </table>
+</div>
+
+<p><img src="/img/beca/crack_result.png"></p>
+<p align="center">
+  <strong>Figure 9 Outputs of the crack measurement algorithm</strong>
+</p>
+
+<h4 id="Reasoning-and-Reporting-Automation"><a href="#Reasoning-and-Reporting-Automation" class="headerlink" title="Reasoning and Reporting Automation"></a>Reasoning and Reporting Automation</h4><p>The output from the Yolo model includes the frame number and bounding box of the defect, and is saved in a .txt file, and the outputs from the Yolo are then fed into the next stage “Reasoning and Reporting Automation”. In engaging the GPT vision, the first step was providing the prompt, which tells the GPT the role that it needs to play. The prompting used in this research is shown in Figure 10, moreover, the output scheme was also specified. This tells the GPT the format that it should follow when reporting. The final outputs are shown in Table 3.</p>
+<pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px;">
+system_message = {
+    "role": "system",
+    "content": "You are a crack detection engineer, specializing in identifying defects on kerbs and channels. Your task is to conduct a visual road condition rating survey, focusing on the provided image. Pay attention to details such as overall curb integrity, visibility of joints, debris in the channel, and transitions to the road surface. Emphasize a balanced tone, expressing confidence while acknowledging potential limitations due to shadows. Your responses should maintain a consistent structure, and when addressing debris, align with the notion that minor debris is typical and not necessarily indicative of a defect" 
+}
+</pre>
+<p align="center">
+  <strong>Figure 10 GPT prompting messages</strong>
+</p>
+
+
+<table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+  <caption><i>Table 3: Inspection report outputs (GPT generated)</i></caption>
+  <tr>
+    <th>Criteria of Interest</th>
+    <th>Description and Rating</th>
+  </tr>
+  <tr>
+    <td><strong>Curb Integrity</strong></td>
+    <td>The curb shows signs of cracking and potential shifting, particularly around the area where it meets the tree base. This could indicate structural weakness or damage due to root growth. The condition is rated as 2.5 (between Average and Poor). Confidence level: 75% due to shadows that may obscure smaller defects.</td>
+  </tr>
+  <tr>
+    <td><strong>Surfaced Channel</strong></td>
+    <td>The channel appears to be an earth surface channel with some accumulation of natural debris such as leaves and small branches. There is no visible evidence of significant blockages that would prevent water from flowing, but the proximity to the tree suggests potential for blockage due to falling debris. The general condition of the channel in regard to its effectiveness is rated as 2 (Average). Confidence level: 70% due to limited visibility of the entire channel.</td>
+  </tr>
+  <tr>
+    <td><strong>Joint Condition</strong></td>
+    <td>The joints between curb sections are partially visible, with some displacement noticeable near the tree, likely due to root growth. The condition of the joints is rated as 2 (Average). Confidence level: 80% as the joints are mostly visible and the defects are apparent.</td>
+  </tr>
+  <tr>
+    <td><strong>Debris in Channel</strong></td>
+    <td>There is minor debris in the form of leaves and small twigs, which is typical and does not indicate a significant defect. The condition is rated as 1 (Good) in terms of debris impact. Confidence level: 90% as the debris is clearly visible and typical for an outdoor environment.</td>
+  </tr>
+  <tr>
+    <td><strong>Transition to Road Surface</strong></td>
+    <td>The transition to the road surface is not fully visible in the image, but there does not appear to be any significant gaps or sinking at the visible edge of the curb. The condition is rated as 1.5 (Good to Average). Confidence level: 60% due to the limited view of the transition area.</td>
+  </tr>
+  <tr>
+    <td><strong>Overall Condition</strong></td>
+    <td>The curb and channel show signs of wear and potential damage near the tree, which may require attention to prevent further deterioration. There are no visible faults in catchpits/sumps or issues requiring urgent attention in the visible area. The overall condition is rated as 2 (Average). Confidence level: 75% based on the visible evidence and potential for unseen issues.</td>
+  </tr>
+  <tr>
+    <td><strong>Additional Considerations</strong></td>
+    <td>The presence of the tree should be noted as it may affect the long-term integrity of the curb and channel due to root growth. Regular maintenance to clear debris and monitor the condition near the tree base is recommended. Please note that the assessment is based on the visible aspects of the image and is subject to limitations such as shadows, lighting, image resolution, and the extent and angle of image capture.</td>
+  </tr>
+</table>
+<p align="center">
+  <strong>Table 3 Inspection report outputs (GPT generated)</strong>
+</p>
+
+<h3 id="Summary-of-Research"><a href="#Summary-of-Research" class="headerlink" title="Summary of Research"></a>Summary of Research</h3><p>The purpose of this project is to develop asset condition monitoring and defect detection technologies. By developing CV-based models and automated reporting systems, the project aims to improve the accuracy and efficiency of infrastructure inspections, including pavements, kerbs, channels, and sewage pipes. The expected outcome is a proof-of-concept solution that incorporates STOA techniques, helping Beca remain competitive in innovative infrastructure management solutions.</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Pavement-defect/"># Pavement defect</a>
+                    
+                        <a href="/tags/Industry-collaboration/"># Industry collaboration</a>
+                    
+                        <a href="/tags/Training/"># Training</a>
+                    
+                        <a href="/tags/YOLO/"># YOLO</a>
+                    
+                        <a href="/tags/Computer-vision/"># Computer vision</a>
+                    
+                        <a href="/tags/infrastructure-health-monitoring/"># infrastructure health monitoring</a>
+                    
+                        <a href="/tags/pipeline-condition/"># pipeline condition</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/04/02/Pavement%20Performance%20Workshop/">Pavement Performance & Defect Workshop</a>
+            
+            
+            <a class="next" rel="next" href="/2024/01/31/profile_estimation2/">Vehicle response-based roughness profile estimation - LSTM</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <!-- <span>©  | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span> -->
+        <!-- <span>©  | Powered by <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span> -->
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

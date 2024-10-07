@@ -129,71 +129,6 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
@@ -221,11 +156,7 @@
         </header>
 
         <div class="post-content">
-            <h3 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h3><p>As the industry is transforming towards ML-based asset management leveraging computer vision and machine learning algorithms, I trained a YOLO model to<br>pickup defects from a road pavement. </p>
-<p>The database RDD <a target="_blank" rel="noopener" href="https://github.com/sekilab/RoadDamageDetector?tab=readme-ov-file">https://github.com/sekilab/RoadDamageDetector?tab=readme-ov-file</a> was used</p>
-<h3 id="Result-on-tested-video"><a href="#Result-on-tested-video" class="headerlink" title="Result on tested video"></a>Result on tested video</h3><p><a target="_blank" rel="noopener" href="https://studio.youtube.com/video/zrqh-q_HL14/edit">https://studio.youtube.com/video/zrqh-q_HL14/edit</a></p>
-<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><p>I compared the performance of Yolo-V5 and Yolo-V8. The Yolo-V5s and V8s were selected</p>
-<h3 id="Findings"><a href="#Findings" class="headerlink" title="Findings"></a>Findings</h3><p>Yolo-V5 picks up more false positivies than V8<br>Howeer, the differencs between the two models are minor, and both could serve the purposes in for practical application, </p>
+            <p>to be updated</p>
 
         </div>
 

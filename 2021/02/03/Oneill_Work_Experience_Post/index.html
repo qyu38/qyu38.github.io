@@ -129,71 +129,6 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
@@ -221,7 +156,7 @@
         </header>
 
         <div class="post-content">
-            <h3 id="My-Experience"><a href="#My-Experience" class="headerlink" title="My Experience"></a>My Experience</h3><p>After gaining experience in my first job, I was excited to take on new challenges when I joined The O’Neill Group as a Civil Engineer. I had the opportunity to work on a variety of civil engineering projects that improved my skill sets and deepened my understanding of civil infrastructure design.</p>
+            <p>After gaining experience in my first job, I was excited to take on new challenges when I joined The O’Neill Group as a Civil Engineer. I had the opportunity to work on a variety of civil engineering projects that improved my skill sets and deepened my understanding of civil infrastructure design.</p>
 <p>During my time at The O’Neill Group, I worked on stormwater designs for both commercial building and land development projects. These projects required me to develop solutions for surface water open channels, and underground storage systems. Meanwhile, my works also involved conducting bulk earthworks and cut-and-fill analyses for land development sites and road alignments, a process that involved balancing excavation and fill quantities to optimise costs. I also conducted site investigations throughout the project lifecycle, ensuring that the conditions as-built were accurately reflected in our designs and that any issues were addressed promtly. Collaboration was the key in this role. I liaised closely with other discipline teams, clients, councils, and water authorities to develop stormwater solutions that met regulatory requirements and the client’s needs. This engagement gave me experience in navigating stakeholder expectations and ensuring that all parties were happy with the proposed solutions.</p>
 <p>My time at The O’Neill Group allowed me to refine my technical skills while also enhancing my communication and project management skills. Moreover, I developed the ability to work under high stress, thanks to Mr.Andrew Charalambous, the director. Andrew is very picky and has a extremely high bar of standards on our works. He often would publicly criticise people if he spotted something wrong. I was aften roasted by him when I did something stupidly wrong. Though such vibe in the office is not good, it did to some extent drive me to pay closer attention to my work. I could feel that my working deligence and resilience were improved at O’Neill Group. </p>
 <p>It was not easy for the companry to steer through the hardships casued by COVID, and I am glad that I have made it through! Lastly, I would like to express my gratidute to Mr.Siri Singmasiti and Mr.Michael Di’Paola for your guidance and mentorship. You have helped me grow into a more qualified civil engineer！</p>

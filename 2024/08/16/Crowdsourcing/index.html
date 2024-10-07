@@ -129,71 +129,6 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
@@ -221,8 +156,32 @@
         </header>
 
         <div class="post-content">
-            <h3 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h3><p>The database RDD <a target="_blank" rel="noopener" href="https://github.com/sekilab/RoadDamageDetector?tab=readme-ov-file">https://github.com/sekilab/RoadDamageDetector?tab=readme-ov-file</a> was used</p>
-<h3 id="Result-on-tested-video"><a href="#Result-on-tested-video" class="headerlink" title="Result on tested video"></a>Result on tested video</h3><h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><h3 id="Findings"><a href="#Findings" class="headerlink" title="Findings"></a>Findings</h3>
+            <p>For details, please refer to the <a target="_blank" rel="noopener" href="https://ec-3.org/publications/conference/paper/?id=EC32024_176">paper</a></p>
+<hr>
+<p>The smartphone-collected vehicle response data is being used to estimate the International Roughness Index (IRI). Among the existing smartphone-based methods, the data-driven approach, which involves training a machine learning model, is drawing more attention. However, surveying the IRI using conventional methods is expensive and there is limited labelled response data. In contrast, there exists a wealth of unlabelled response data from road users. This scenario presents opportunities for exploring semi-supervised learning (SSL) algorithms, which have been insufficiently researched in this domain. This study addresses this gap by applying an SSL framework to refine an IRI estimation model. Our results show that the SSL-trained model achieves a lower RMSE than the fully supervised trained model.  </p>
+<p><img src="/img/crowdsource/framework.png"></p>
+<p align="center">
+  <strong>Research framework</strong>
+</p>
+
+<p><img src="/img/crowdsource/SSL.png"></p>
+<!-- <p align="center">
+  <strong>Semi-supervised learning</strong>
+</p> -->
+
+<p>Machine Learning Integration: Our model applies a multilayer perceptron (MLP) structure trained using real-world vehicle responses. We introduced the VIME ( Variational Information Maximizing Exploration) method in our SSL framework to leverage unlabelled data and improve the model’s accuracy over fully supervised models.</p>
+<p><img src="/img/crowdsource/VIME.png"></p>
+<p align="center">
+  <strong>VIME algorithm</strong>
+</p>
+
+<p>We engaged real participants, collecting data from different vehicle models and smartphone mounting configurations to ensure our model accounts for variations in real-world scenarios. Our model demonstrated significant improvement, achieving a lower Root Mean Squared Error (RMSE) compared to fully-supervised models, showcasing the effectiveness of integrating SSL into public vehicle-based pavement monitoring systems.</p>
+<p><img src="/img/crowdsource/SSL_plot.png"></p>
+<p align="center">
+  <strong>RMSE of the fully-supervised and semi-supervised models in different label rates</strong>
+</p>
+
+
         </div>
 
         
@@ -240,11 +199,13 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Pavement-defect/"># Pavement defect</a>
+                        <a href="/tags/Pavement-roughness/"># Pavement roughness</a>
                     
                         <a href="/tags/Mounting/"># Mounting</a>
                     
                         <a href="/tags/Crowdsourcing/"># Crowdsourcing</a>
+                    
+                        <a href="/tags/IRI/"># IRI</a>
                     
                         
                 </span>
@@ -257,7 +218,7 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/09/04/EU_trip_2024/">Europe trip</a>
+                <a class="prev" rel="prev" href="/2024/09/04/Cambridge_visiting_summary/">Visiting Study at University of Cambridge</a>
             
             
             <a class="next" rel="next" href="/2024/08/05/Tutoring%20CIV5899/">Tutoring CIV5899</a>

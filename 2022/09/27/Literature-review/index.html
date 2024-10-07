@@ -15,7 +15,7 @@
 
 
 
-<title>Literature review | Leo Yu</title>
+<title>Pavement Roughness Index Estimation and Anomaly Detection Using Smartphones - Literature Review | Leo Yu</title>
 
 
 
@@ -198,7 +198,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Literature review</h1>
+            <h1 class="post-title">Pavement Roughness Index Estimation and Anomaly Detection Using Smartphones - Literature Review</h1>
             
                 <div class="post-meta">
                     
@@ -221,13 +221,13 @@
         </header>
 
         <div class="post-content">
-            <h1 id="Pavement-Roughness-Index-Estimation-and-Anomaly-Detection-Using-Smartphones"><a href="#Pavement-Roughness-Index-Estimation-and-Anomaly-Detection-Using-Smartphones" class="headerlink" title="Pavement Roughness Index Estimation and Anomaly Detection Using Smartphones"></a><strong>Pavement Roughness Index Estimation and Anomaly Detection Using Smartphones</strong></h1><p>For details, please refer to the paper:<br><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.autcon.2022.104409">DOI: 10.1016&#x2F;j.autcon.2022.104409</a></p>
+            <p>For details, please refer to the <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.autcon.2022.104409">paper</a></p>
 <hr>
-<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Smartphones offer a low-cost, widely accessible method for assessing pavement roughness, presenting an alternative to traditional instruments. This paper reviews the current knowledge on smartphone-based pavement roughness assessment and anomaly detection (AD). It identifies gaps in the existing research and proposes future directions. Key aspects of sensor selection, data preprocessing, and algorithm choices are discussed. Practical factors like data collection speed, vehicle type, and smartphone placement are considered to improve the robustness and accuracy of the method.</p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>Smartphones offer a low-cost, widely accessible method for assessing pavement roughness, presenting an alternative to traditional instruments. This paper reviews the current knowledge on smartphone-based pavement roughness assessment and anomaly detection (AD). It identifies gaps in the existing research and proposes future directions. Key aspects of sensor selection, data preprocessing, and algorithm choices are discussed. Practical factors like data collection speed, vehicle type, and smartphone placement are considered to improve the robustness and accuracy of the method.</p>
 <hr>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Pavement deteriorates over time due to traffic loads and environmental conditions. Monitoring pavement conditions is crucial for ensuring road safety, ride comfort, and cost-efficient maintenance. Traditionally, roughness indices like the International Roughness Index (IRI) are measured using costly inertial profilers. This paper explores the potential of using smartphones, which can crowdsource data from drivers, providing a more affordable, scalable solution.</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Pavement deteriorates over time due to traffic loads and environmental conditions. Monitoring pavement conditions is crucial for ensuring road safety, ride comfort, and cost-efficient maintenance. Traditionally, roughness indices like the International Roughness Index (IRI) are measured using costly inertial profilers. This paper explores the potential of using smartphones, which can crowdsource data from drivers, providing a more affordable, scalable solution.</p>
 <hr>
-<h2 id="Review-Methodology"><a href="#Review-Methodology" class="headerlink" title="Review Methodology"></a>Review Methodology</h2><p>The paper adopts a systematic review methodology, incorporating five key steps:</p>
+<h3 id="Review-Methodology"><a href="#Review-Methodology" class="headerlink" title="Review Methodology"></a>Review Methodology</h3><p>The paper adopts a systematic review methodology, incorporating five key steps:</p>
 <ol>
 <li>Scoping</li>
 <li>Searching</li>
@@ -237,7 +237,7 @@
 </ol>
 <p>A literature search across two databases (Web of Science, Scopus) yielded 192 relevant publications. The earliest research dates back to 2007, with a growing trend in recent years.</p>
 <p><img src="/img/Literature_review_flowchart.png" alt="alt text"></p>
-<h2 id="Literature-Search"><a href="#Literature-Search" class="headerlink" title="Literature Search"></a>Literature Search</h2><p>Key topics covered in the literature include:</p>
+<h3 id="Literature-Search"><a href="#Literature-Search" class="headerlink" title="Literature Search"></a>Literature Search</h3><p>Key topics covered in the literature include:</p>
 <ul>
 <li><strong>Accelerometer</strong>: Used to capture vehicle movement caused by road roughness.</li>
 <li><strong>Pavement distress types</strong>: Cracking, rutting, potholes, and other anomalies.</li>
@@ -249,30 +249,30 @@
 <img src="/2022/09/27/Literature-review/source"  alt="Image"> -->
 
 <hr>
-<h2 id="Sensor-Selection-and-Data-Pre-Processing"><a href="#Sensor-Selection-and-Data-Pre-Processing" class="headerlink" title="Sensor Selection and Data Pre-Processing"></a>Sensor Selection and Data Pre-Processing</h2><h3 id="4-1-Sensor-Axis-Selection"><a href="#4-1-Sensor-Axis-Selection" class="headerlink" title="4.1. Sensor Axis Selection"></a>4.1. Sensor Axis Selection</h3><p>Smartphones contain accelerometers and gyroscopes that measure linear and rotational motion in multiple axes. Different combinations of axes are used for Roughness Index Estimation (RIE) and Anomaly Detection (AD). For instance, vertical acceleration is often employed to detect bumps and potholes, while lateral axes help distinguish between various surface anomalies.</p>
+<h3 id="Sensor-Selection-and-Data-Pre-Processing"><a href="#Sensor-Selection-and-Data-Pre-Processing" class="headerlink" title="Sensor Selection and Data Pre-Processing"></a>Sensor Selection and Data Pre-Processing</h3><h4 id="4-1-Sensor-Axis-Selection"><a href="#4-1-Sensor-Axis-Selection" class="headerlink" title="4.1. Sensor Axis Selection"></a>4.1. Sensor Axis Selection</h4><p>Smartphones contain accelerometers and gyroscopes that measure linear and rotational motion in multiple axes. Different combinations of axes are used for Roughness Index Estimation (RIE) and Anomaly Detection (AD). For instance, vertical acceleration is often employed to detect bumps and potholes, while lateral axes help distinguish between various surface anomalies.</p>
 <p><img src="/img/axis.png" alt="alt text"></p>
-<h3 id="4-2-Data-Filtering"><a href="#4-2-Data-Filtering" class="headerlink" title="4.2. Data Filtering"></a>4.2. Data Filtering</h3><p>Pre-processing techniques like <strong>low-pass</strong> and <strong>high-pass filters</strong> help eliminate noise from raw data, such as engine vibrations or vehicle maneuvers. Simple Moving Average (SMA) filters are also used to smooth acceleration data.</p>
+<h4 id="4-2-Data-Filtering"><a href="#4-2-Data-Filtering" class="headerlink" title="4.2. Data Filtering"></a>4.2. Data Filtering</h4><p>Pre-processing techniques like <strong>low-pass</strong> and <strong>high-pass filters</strong> help eliminate noise from raw data, such as engine vibrations or vehicle maneuvers. Simple Moving Average (SMA) filters are also used to smooth acceleration data.</p>
 <hr>
-<h2 id="Methods-for-Roughness-Index-Estimation"><a href="#Methods-for-Roughness-Index-Estimation" class="headerlink" title="Methods for Roughness Index Estimation"></a>Methods for Roughness Index Estimation</h2><h3 id="5-1-IRI-Estimation"><a href="#5-1-IRI-Estimation" class="headerlink" title="5.1. IRI Estimation"></a>5.1. IRI Estimation</h3><p>The IRI is a widely accepted metric for pavement roughness. Smartphones can estimate IRI using three main methods:</p>
+<h3 id="Methods-for-Roughness-Index-Estimation"><a href="#Methods-for-Roughness-Index-Estimation" class="headerlink" title="Methods for Roughness Index Estimation"></a>Methods for Roughness Index Estimation</h3><h4 id="5-1-IRI-Estimation"><a href="#5-1-IRI-Estimation" class="headerlink" title="5.1. IRI Estimation"></a>5.1. IRI Estimation</h4><p>The IRI is a widely accepted metric for pavement roughness. Smartphones can estimate IRI using three main methods:</p>
 <ol>
 <li><strong>Statistical Methods</strong>: Correlate acceleration data with IRI via regression analysis.</li>
 <li><strong>Vehicle Model-Based Methods</strong>: Estimate IRI by simulating vehicle suspension models.</li>
 <li><strong>Machine Learning (ML) Methods</strong>: Use algorithms like Artificial Neural Networks (ANN) to predict roughness indices from sensor data.</li>
 </ol>
-<h3 id="5-2-Estimation-of-Other-Roughness-Indices"><a href="#5-2-Estimation-of-Other-Roughness-Indices" class="headerlink" title="5.2. Estimation of Other Roughness Indices"></a>5.2. Estimation of Other Roughness Indices</h3><p>Beyond the IRI, other indices such as the Pavement Condition Index (PCI) and Pavement Serviceability Index (PSI) are discussed.</p>
+<h4 id="5-2-Estimation-of-Other-Roughness-Indices"><a href="#5-2-Estimation-of-Other-Roughness-Indices" class="headerlink" title="5.2. Estimation of Other Roughness Indices"></a>5.2. Estimation of Other Roughness Indices</h4><p>Beyond the IRI, other indices such as the Pavement Condition Index (PCI) and Pavement Serviceability Index (PSI) are discussed.</p>
 <hr>
-<h2 id="Methods-for-Anomaly-Detection"><a href="#Methods-for-Anomaly-Detection" class="headerlink" title="Methods for Anomaly Detection"></a>Methods for Anomaly Detection</h2><h3 id="6-1-Acceleration-Threshold-and-Pattern-Methods"><a href="#6-1-Acceleration-Threshold-and-Pattern-Methods" class="headerlink" title="6.1. Acceleration Threshold and Pattern Methods"></a>6.1. Acceleration Threshold and Pattern Methods</h3><p>Road anomalies like potholes can be detected by comparing acceleration data to predefined thresholds. Alternatively, pattern-based methods like <strong>Dynamic Time Warping (DTW)</strong> identify anomalies by comparing the signal pattern against known patterns, making them robust to speed variations.</p>
-<h3 id="6-2-Classification-Based-Methods"><a href="#6-2-Classification-Based-Methods" class="headerlink" title="6.2. Classification-Based Methods"></a>6.2. Classification-Based Methods</h3><p>Machine learning models can classify anomalies using features extracted from the acceleration signal. Support Vector Machines (SVM), Random Forest (RF), and Convolutional Neural Networks (CNN) are commonly used for this purpose.</p>
-<h3 id="6-3-Vision-Based-Methods"><a href="#6-3-Vision-Based-Methods" class="headerlink" title="6.3. Vision-Based Methods"></a>6.3. Vision-Based Methods</h3><p>Smartphone cameras complement accelerometer data to detect anomalies like cracks, which do not always produce significant vibrations.</p>
+<h3 id="Methods-for-Anomaly-Detection"><a href="#Methods-for-Anomaly-Detection" class="headerlink" title="Methods for Anomaly Detection"></a>Methods for Anomaly Detection</h3><h4 id="6-1-Acceleration-Threshold-and-Pattern-Methods"><a href="#6-1-Acceleration-Threshold-and-Pattern-Methods" class="headerlink" title="6.1. Acceleration Threshold and Pattern Methods"></a>6.1. Acceleration Threshold and Pattern Methods</h4><p>Road anomalies like potholes can be detected by comparing acceleration data to predefined thresholds. Alternatively, pattern-based methods like <strong>Dynamic Time Warping (DTW)</strong> identify anomalies by comparing the signal pattern against known patterns, making them robust to speed variations.</p>
+<h4 id="6-2-Classification-Based-Methods"><a href="#6-2-Classification-Based-Methods" class="headerlink" title="6.2. Classification-Based Methods"></a>6.2. Classification-Based Methods</h4><p>Machine learning models can classify anomalies using features extracted from the acceleration signal. Support Vector Machines (SVM), Random Forest (RF), and Convolutional Neural Networks (CNN) are commonly used for this purpose.</p>
+<h4 id="6-3-Vision-Based-Methods"><a href="#6-3-Vision-Based-Methods" class="headerlink" title="6.3. Vision-Based Methods"></a>6.3. Vision-Based Methods</h4><p>Smartphone cameras complement accelerometer data to detect anomalies like cracks, which do not always produce significant vibrations.</p>
 <hr>
-<h2 id="Factors-Affecting-Accuracy"><a href="#Factors-Affecting-Accuracy" class="headerlink" title="Factors Affecting Accuracy"></a>Factors Affecting Accuracy</h2><p>Smartphone-based methods are influenced by several factors, including:</p>
+<h3 id="Factors-Affecting-Accuracy"><a href="#Factors-Affecting-Accuracy" class="headerlink" title="Factors Affecting Accuracy"></a>Factors Affecting Accuracy</h3><p>Smartphone-based methods are influenced by several factors, including:</p>
 <ul>
 <li><strong>Vehicle speed</strong>: Higher speeds generate stronger acceleration signals.</li>
 <li><strong>Vehicle type</strong>: Different vehicle models produce varying responses to road roughness.</li>
 <li><strong>Smartphone mounting</strong>: The orientation and placement of the phone affect sensor data accuracy.</li>
 </ul>
 <hr>
-<h2 id="Knowledge-Gaps-and-Future-Directions"><a href="#Knowledge-Gaps-and-Future-Directions" class="headerlink" title="Knowledge Gaps and Future Directions"></a>Knowledge Gaps and Future Directions</h2><p>Despite the progress made, several challenges remain:</p>
+<h3 id="Knowledge-Gaps-and-Future-Directions"><a href="#Knowledge-Gaps-and-Future-Directions" class="headerlink" title="Knowledge Gaps and Future Directions"></a>Knowledge Gaps and Future Directions</h3><p>Despite the progress made, several challenges remain:</p>
 <ul>
 <li>More robust models that account for varying driving speeds, vehicle types, and phone placements are needed.</li>
 <li>Combining accelerometer data with vision-based approaches could improve detection accuracy.</li>
@@ -297,9 +297,9 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Literature-review/"># Literature_review</a>
-                    
                         <a href="/tags/IRI/"># IRI</a>
+                    
+                        <a href="/tags/Literature-review/"># Literature_review</a>
                     
                         <a href="/tags/smartphone-based-roughness-index-estimation/"># smartphone-based roughness index estimation</a>
                     
