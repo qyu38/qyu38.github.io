@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <meta name="subtitle" content="Engineering | AI">
+
+
+    <meta name="description" content="A student from Moanash Clayton">
+
+
+
+<title>Applying for Smart Traffic Fund — LLM-powered Road Digital Twin for Hong Kong | Leo Yu</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Leo&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Leo&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Applying for Smart Traffic Fund — LLM-powered Road Digital Twin for Hong Kong</h1>
+            
+                <div class="post-meta">
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">March 15, 2026&nbsp;&nbsp;10:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/research/">Research</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="Smart-Traffic-Fund-application-—-AI-powered-Road-Digital-Twin-for-Hong-Kong"><a href="#Smart-Traffic-Fund-application-—-AI-powered-Road-Digital-Twin-for-Hong-Kong" class="headerlink" title="Smart Traffic Fund application — AI-powered Road Digital Twin for Hong Kong"></a>Smart Traffic Fund application — AI-powered Road Digital Twin for Hong Kong</h3><hr>
+<p>During my postdoctoral research at <strong>City University of Hong Kong (CityU)</strong>, I contributed to a <strong>Smart Traffic Fund (STF)</strong> research and application proposal led by <strong>Prof. Xiaowei Luo</strong> — <strong>“LLM-powered Road Maintenance Digital Twin for Hong Kong”</strong>. The project aims to transform how Hong Kong monitors, diagnoses, and maintains its road network by integrating fleet-based sensing, multi-modal AI diagnostics, and an LLM-powered cognitive digital twin into operational road asset management workflows.</p>
+<p><img src="/img/CityU/hk_road_dt_proposal.png" alt="Proposed maintenance-oriented Road Digital Twin framework for Hong Kong"></p>
+<p align="center">
+  <strong>Proposed framework — sensing, diagnostics, digitalisation, and deployment</strong>
+</p>
+
+<h4 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h4><p>Hong Kong’s road network spans <strong>2,241 km</strong>, with annual highway maintenance spending of approximately <strong>HK$1.69 billion</strong>. In 2023 alone, more than <strong>3,400 road damage or defect cases</strong> were reported. Conventional monitoring relies on labour-intensive manual inspections and costly professional survey vehicles, offering limited spatial and temporal coverage. Maintenance is often reactive — defects are addressed only after they worsen — which affects driving comfort, safety, and operational efficiency.</p>
+<p>The <strong>Smart Traffic Fund</strong> — a <strong>HK$1 billion</strong> initiative established by the <strong>Transport Department</strong> — supports research and application projects that use innovation and technology to improve the convenience, efficiency, and safety of road users. Our proposal aligns with this scope by developing vehicle-related technologies for smarter, proactive, and data-driven road asset management.</p>
+<h4 id="Proposed-solution-—-four-integrated-modules"><a href="#Proposed-solution-—-four-integrated-modules" class="headerlink" title="Proposed solution — four integrated modules"></a>Proposed solution — four integrated modules</h4><p>The proposed <strong>maintenance-oriented Road Digital Twin (DT)</strong> integrates four modules across the full management cycle:</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Sensing</strong></td>
+<td>Fleet-vehicle toolkit and smartphone app for real-time, city-wide road monitoring</td>
+</tr>
+<tr>
+<td><strong>Diagnostics</strong></td>
+<td>Multi-modal AI models for defect classification, quantification, and roughness analysis</td>
+</tr>
+<tr>
+<td><strong>Digitalisation</strong></td>
+<td>Dynamic road digital twin with road-specific ontology and interoperable data structures</td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td>Predictive maintenance strategies and LLM-generated inspection reports</td>
+</tr>
+</tbody></table>
+<h5 id="1-Sensing-module"><a href="#1-Sensing-module" class="headerlink" title="1. Sensing module"></a>1. Sensing module</h5><p>Unlike conventional survey vehicles with limited coverage, this module deploys a <strong>low-cost sensing toolkit</strong> on fleet vehicle windscreens (e.g. buses, taxis, and garbage trucks), turning widely available public vehicles into a scalable data source.</p>
+<p>The onboard hardware design includes:</p>
+<ul>
+<li><strong>Main controller:</strong> LubanCat RK3588</li>
+<li><strong>Depth camera:</strong> Orbbec Femto Bolt</li>
+<li><strong>IMU:</strong> HIPNUC HI229 (under evaluation)</li>
+<li><strong>GPS module:</strong> Beitian GPS (under evaluation)</li>
+<li><strong>Mini IPS display</strong> for local interaction (under evaluation)</li>
+<li><strong>Microphone</strong> for acoustic sensing (full configuration)</li>
+<li><strong>Interfaces:</strong> USB ports, 12 V DC power, TF card slot</li>
+</ul>
+<p>Key innovations include <strong>VLM models optimised for mobile-grade hardware</strong>, enabling responsive on-vehicle detections rather than relying solely on conventional survey instruments. A complementary <strong>smartphone app</strong> (iOS and Android) will support public participation in crowdsourced data collection, covering both response-based comfort monitoring and visual AI-based defect detection.</p>
+<p><strong>Target:</strong> a functional toolkit costing <strong>under HK$1,000 per unit</strong>, enabling scalable deployment across urban routes.</p>
+<h5 id="2-Diagnostics-module"><a href="#2-Diagnostics-module" class="headerlink" title="2. Diagnostics module"></a>2. Diagnostics module</h5><p>AI models process <strong>multi-modal data</strong> — camera visuals, vehicle motion (IMU), and acoustic signals — to evaluate pavement and roadside asset conditions. Compared with existing CV-only solutions (e.g. Blackmoth, 3DAI) that detect defects with bounding boxes, this module aims to provide <strong>advanced defect quantification</strong> (width, depth, and length) for maintenance prioritisation.</p>
+<p>The diagnostics pipeline explores:</p>
+<ul>
+<li><strong>RGB stream:</strong> lightweight architectures (Inception-based CNNs, MobileNet) with data augmentation</li>
+<li><strong>IMU + acoustic stream:</strong> LSTM-based models with time warping and magnitude scaling augmentation</li>
+<li><strong>Sensor fusion:</strong> feature-level and decision-level fusion across modalities</li>
+<li><strong>LLM&#x2F;VLM validation:</strong> outputs validated against human-labelled data and engineering guidelines</li>
+</ul>
+<p><strong>Target:</strong> <strong>≥ 95% accuracy</strong> in defect detection and classification, with daily high-resolution road assessments.</p>
+<h5 id="3-Digitalisation-module-—-Cognitive-Road-Digital-Twin"><a href="#3-Digitalisation-module-—-Cognitive-Road-Digital-Twin" class="headerlink" title="3. Digitalisation module — Cognitive Road Digital Twin"></a>3. Digitalisation module — Cognitive Road Digital Twin</h5><p>Current systems such as HyD’s <strong>MARCH</strong> platform store critical asset information but face <strong>fragmented data schemas</strong> and limited interoperability with BIM and other management tools. This module proposes a <strong>Cognitive Digital Twin</strong> that:</p>
+<ul>
+<li>Develops a <strong>road-specific ontology graph</strong> and flexible data structures</li>
+<li>Continuously ingests fleet-contributed sensing and diagnostic outputs</li>
+<li>Integrates geospatial data, maintenance logs, and inspection records</li>
+<li>Provides a unified, real-time representation of road asset conditions across Hong Kong</li>
+</ul>
+<h5 id="4-Deployment-module-—-LLM-powered-maintenance-intelligence"><a href="#4-Deployment-module-—-LLM-powered-maintenance-intelligence" class="headerlink" title="4. Deployment module — LLM-powered maintenance intelligence"></a>4. Deployment module — LLM-powered maintenance intelligence</h5><p>The deployment module addresses the labour-intensive manual interpretation of multi-modal inspection data. <strong>Domain-specific LLMs</strong> will be fine-tuned on labelled images, inspection reports, and Hong Kong road asset guidelines to:</p>
+<ul>
+<li>Generate <strong>autonomous inspection reports</strong> (Scan-to-Report)</li>
+<li>Support <strong>predictive maintenance planning</strong> using historical maintenance, climate, and traffic data</li>
+<li>Provide <strong>actionable maintenance recommendations</strong> benchmarked against engineering standards</li>
+</ul>
+<h4 id="Research-objectives"><a href="#Research-objectives" class="headerlink" title="Research objectives"></a>Research objectives</h4><ol>
+<li><strong>Develop a scalable, low-cost road asset sensing system</strong> — VLM-powered devices on public fleet vehicles for real-time, city-wide monitoring with open and actionable data collection.</li>
+<li><strong>Advance AI-based road asset diagnostics</strong> — multi-modal AI models for accurate, quantifiable detection of road anomalies, integrating visual and vibration data.</li>
+<li><strong>Establish an LLM-powered Cognitive Road Digital Twin</strong> — unify, interpret, and generate actionable insights from diverse road asset data to enhance maintenance decision-making.</li>
+</ol>
+<h4 id="R-amp-D-milestones-and-deliverables"><a href="#R-amp-D-milestones-and-deliverables" class="headerlink" title="R&amp;D milestones and deliverables"></a>R&amp;D milestones and deliverables</h4><p>The project is structured in four milestones:</p>
+<table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Focus</th>
+<th>Key deliverable</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>M1</strong></td>
+<td>Sensing</td>
+<td>D1: Road condition data collection system (toolkit + smartphone app)</td>
+</tr>
+<tr>
+<td><strong>M2</strong></td>
+<td>Diagnostics</td>
+<td>Multi-modal pavement condition assessment framework</td>
+</tr>
+<tr>
+<td><strong>M3</strong></td>
+<td>Digitalisation</td>
+<td>D5: Digital Twin system for road asset managing authorities</td>
+</tr>
+<tr>
+<td><strong>M4</strong></td>
+<td>Deployment</td>
+<td>LLM-powered routine inspection report generation and maintenance planning</td>
+</tr>
+</tbody></table>
+<p>A <strong>field experiment in Hong Kong</strong>, involving local bus and taxi operators, will validate the platform’s ability to reduce manual inspection costs, achieve high-accuracy defect detection, and generate predictive maintenance plans more efficiently than conventional methods.</p>
+<h4 id="My-contribution"><a href="#My-contribution" class="headerlink" title="My contribution"></a>My contribution</h4><p>As part of the CityU project team, my work on this STF application included:</p>
+<ul>
+<li><p>Drafting and refining the <strong>technical proposal</strong> and project abstract</p>
+</li>
+<li><p>Designing the <strong>on-vehicle sensing hardware architecture</strong> (edge computing platform, depth camera, IMU, and GPS integration)</p>
+</li>
+<li><p>Supporting the development of the <strong>diagnostics and digital twin framework</strong>, building on my prior PhD research on smartphone-based pavement roughness estimation, crowdsourced data, and LLM-assisted inspection reporting</p>
+</li>
+<li><p>Preparing presentation materials and literature review for state-of-the-art benchmarking against existing road monitoring and digital twin solutions</p>
+</li>
+<li><p><strong>Smart Traffic Fund:</strong> <a target="_blank" rel="noopener" href="https://www.stf.hkpc.org/">stf.hkpc.org</a></p>
+</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Smart-Traffic-Fund/"># Smart Traffic Fund</a>
+                    
+                        <a href="/tags/digital-twin/"># digital twin</a>
+                    
+                        <a href="/tags/LLM/"># LLM</a>
+                    
+                        <a href="/tags/VLM/"># VLM</a>
+                    
+                        <a href="/tags/pavement-monitoring/"># pavement monitoring</a>
+                    
+                        <a href="/tags/edge-computing/"># edge computing</a>
+                    
+                        <a href="/tags/Hong-Kong/"># Hong Kong</a>
+                    
+                        <a href="/tags/research/"># research</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2026/05/23/Road_pavement_subsurface_condition_evaluation/">Road pavement subsurface condition evaluation using data-driven approaches</a>
+            
+            
+            <a class="next" rel="next" href="/2026/03/02/Teaching_WSU_ARCH1004_CIVL3017/">Teaching at Western Sydney University — ARCH1004 & CIVL3017</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <!-- <span>©  | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span> -->
+        <!-- <span>©  | Powered by <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span> -->
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
